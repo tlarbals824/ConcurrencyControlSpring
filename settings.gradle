@@ -1,0 +1,4 @@
+rootProject.name = 'ConcurrencyControlSpring'
+include 'ApplicationConcurrency'
+include 'SynchronizedConcurrency'
+include 'DatabaseLockConcurrency'
