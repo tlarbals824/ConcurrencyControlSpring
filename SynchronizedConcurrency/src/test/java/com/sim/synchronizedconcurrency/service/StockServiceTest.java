@@ -45,12 +45,7 @@ class StockServiceTest {
         assertEquals(99, stock.getQuantity());
     }
 
-    /**
-     * expected: <0> but was: <94>
-     * Expected :0
-     * Actual   :94
-     * Race Condition 발생 (경쟁상태) : 여러 스레드가 동시에 접근할 때, 의도하지 않은 결과가 발생하는 상황
-     */
+    // 테스트 시간 : 754ms
     @Test
     void 동시에_100개의_요청() throws InterruptedException {
         int threadCount = 100;

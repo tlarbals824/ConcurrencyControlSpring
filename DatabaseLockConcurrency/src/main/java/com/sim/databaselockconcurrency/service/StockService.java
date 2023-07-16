@@ -4,6 +4,7 @@ import com.sim.databaselockconcurrency.domain.Stock;
 import com.sim.databaselockconcurrency.repository.StockRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
@@ -29,7 +30,7 @@ public class StockService {
      * 주의할점으로는 transaction 이 종료될 때 lock 이 자동으로 해제되지 않습니다.
      * 별도의 명령어로 해제를 수행해주거나 선점시간이 끝나야 해제됩니다.
      */
-    @Transactional
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void decrease(Long id, Long quantity) {
         // get stock
         Stock stock = stockRepository.findByProductId(id).orElseThrow(() -> new IllegalArgumentException("재고가 없습니다."));
