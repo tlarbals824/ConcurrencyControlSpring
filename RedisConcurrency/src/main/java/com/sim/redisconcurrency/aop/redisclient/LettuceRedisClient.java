@@ -9,7 +9,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Component
+//@Component
 @RequiredArgsConstructor
 @Slf4j
 public class LettuceRedisClient implements RedisClient{
