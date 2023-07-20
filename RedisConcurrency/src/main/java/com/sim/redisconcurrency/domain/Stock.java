@@ -27,4 +27,13 @@ public class Stock {
             throw new RuntimeException("재고가 부족합니다.");
         this.quantity -= quantity;
     }
+
+    @Override
+    public String toString() {
+        return "Stock{" +
+                "id=" + id +
+                ", productId=" + productId +
+                ", quantity=" + quantity +
+                '}';
+    }
 }
